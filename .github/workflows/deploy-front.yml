@@ -29,7 +29,7 @@ jobs:
         working-directory: ./front_despacho
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ev3/front
+          ECR_REPOSITORY: examen/front
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build \
@@ -39,7 +39,7 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
       - name: Actualizar Kubeconfig
-        run: aws eks update-kubeconfig --region us-east-1 --name ClusterEV3 
+        run: aws eks update-kubeconfig --region us-east-1 --name ClusterExamen
 
       - name: Desplegar Frontend en Kubernetes
         env:
@@ -48,6 +48,6 @@ jobs:
         run: |
           kubectl apply -f k8s/frontend.yaml
           
-          kubectl set image deployment/frontend-deployment frontend=$ECR_REGISTRY/ev3/front:$TAG
+          kubectl set image deployment/frontend-deployment frontend=$ECR_REGISTRY/examen/front:$TAG
           kubectl rollout status deployment/frontend-deployment
 

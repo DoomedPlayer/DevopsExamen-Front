@@ -50,4 +50,4 @@ jobs:
           
           kubectl set image deployment/frontend-deployment frontend=$ECR_REGISTRY/examen/front:$TAG
           kubectl rollout status deployment/frontend-deployment
-
+ 

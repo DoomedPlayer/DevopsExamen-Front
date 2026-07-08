@@ -1,4 +1,4 @@
-# 🚚 Innovatech Chile - Frontend Web App (Examen Final)
+# 🚚 Innovatech Chile - Frontend Web App 
 
 Este repositorio contiene la aplicación cliente (Frontend) para la plataforma de gestión logística de Innovatech Chile. Proporciona una interfaz gráfica para que los operadores interactúen con los microservicios de Ventas y Despachos, permitiendo visualizar órdenes de compra, asignar transportes y actualizar los estados de entrega en tiempo real.
 
